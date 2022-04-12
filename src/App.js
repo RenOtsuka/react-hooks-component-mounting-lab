@@ -1,24 +1,20 @@
 import React, { Component } from 'react';
-
-import Timer from './Timer'
+import Timer from './Timer';
 
 class App extends Component {
 
   //no props being used here, so we can use the shorthand declaration of state
   state = {
-    timerIDs: []
+    timerIDs: [],
   }
 
 
   //Your code here:
-
-
-
-
-
-
-
-
+  componentDidMount(){
+    this.handleAddTimer();
+    //console.log(Timer.clockTick)
+    this.interval = setInterval(Timer.clockTick(), 1000);
+  }
 
   // No need to modify anything in render or the class methods below
   // Unless, of course, you're curious about how it all works
